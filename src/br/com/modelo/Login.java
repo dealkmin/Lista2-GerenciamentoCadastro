@@ -112,4 +112,29 @@ public class Login {
 		}
 		return null;
 	}
+	
+	public boolean trocarDeUsuario() {
+		Usuario u;
+		u = userLogado();
+		u.setLogado(false);
+		return false;
+	}
+	
+	public void imprimirUsuario() {
+		for (Usuario usuario : usuarios) {
+			if(usuario.getLogado()==true) {
+				System.out.println("|---PERFIL---|");
+				System.out.println("Usuário: "+usuario.getUser());
+				System.out.println("Nome: " + usuario.getNome());
+				System.out.println("Telefone: " + usuario.getTelefone().getNumero());
+				if(usuario.getTipo() == 1) {
+					System.out.println("Pessoa Física");
+				}else {
+					System.out.println("Pessoa Jurídica");
+				}
+				
+				System.out.println("Email: " + usuario.getEmail()+"\n");
+			}
+		}
+	}
 }
