@@ -1,5 +1,9 @@
 package br.com.modelo;
 
-public class Saida {
+public class Saida extends Fluxo {
+	
+	public Saida(Usuario usuario, double valor, String data, int grupo) {
+		super(usuario, valor, data, grupo);
+	}
 
 }
