@@ -21,6 +21,28 @@ public class GerenciamentoCaixaApplication {
 		while(op != 0) {
 			menu.imprimirMenuIniciar();
 			op = controle.opcao();
+			switch(op) {
+			case 1:
+				autenticado = login.autenticar();
+				if(autenticado == true) {
+					caixa.menuPrincipal();
+				}
+				break;
+			case 2:
+				login.cadastrarUsuario();
+				System.out.println("-----ENTRAR NO SISTEMA-----");
+				autenticado = login.autenticar();
+				if(autenticado == true) {
+					caixa.menuPrincipal();
+				}
+				break;
+			case 0:
+				System.out.println("Programa finalizado!");
+				op = 0;
+				break;
+			default:
+				menu.imprimirMenuIniciar();
+			}
 		}
 		
 		

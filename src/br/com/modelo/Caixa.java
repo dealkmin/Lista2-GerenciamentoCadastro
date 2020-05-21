@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import br.com.negocio.Menu;
+
 public class Caixa {
 	
 	private String[] grupoEPFisica = {"Salario", "Investimento"};
@@ -93,5 +95,42 @@ public class Caixa {
 		}
 	}
 	
+	public void menuPrincipal() {
+		Menu menu = new Menu();
+		int op = 1000;
+		
+		while(op != 0) {
+			menu.imprimirMenu();
+			
+			op = Integer.parseInt(scanner.nextLine());
+			switch (op) {
+			case 1:
+				login.cadastrarUsuario();
+				break;
+			case 2:
+				cadastrarEntrada();
+				break;
+			case 3:
+				cadastrarSaida();
+				break;
+			case 4:
+				relatorioMensal();
+				break;
+			case 5:
+				relatorioSemanal();
+				break;
+			case 6:
+				login.trocarDeUsuario();
+				op = 0;
+				return;
+				
+			case 7:
+				login.imprimirUsuario();
+				break;
+			default:
+				menu.imprimirMenu();
+			}
+		}
+	}
 
 }
