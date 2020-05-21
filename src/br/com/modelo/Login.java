@@ -31,4 +31,13 @@ public class Login {
 		System.out.println("Usuário ou senha inválidos");
 		return false;
 	}
+	
+	public Usuario userLogado() {
+		for (Usuario usuario : usuarios) {
+			if (usuario.getLogado() == true){
+				return usuario;
+			}
+		}
+		return null;
+	}
 }
