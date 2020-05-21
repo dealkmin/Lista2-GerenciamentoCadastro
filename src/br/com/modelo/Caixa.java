@@ -83,5 +83,15 @@ public class Caixa {
 		System.out.println("Nova saída cadastrada!");
 		
 	}
+	
+	public void imprimirEntrada() {
+		for (Entrada entrada : entradas) {
+			System.out.println("Usuario: " + entrada.getUsuario().getNome());
+			System.out.println("Valor: " + entrada.getValor());
+			System.out.println("Data: " + entrada.getData());
+			System.out.println("Tipo: " + entrada.getGrupo());
+		}
+	}
+	
 
 }
